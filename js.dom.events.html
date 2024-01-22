@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM/Event cardio</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+    <style>
+        body {
+            background-color: #000;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-shadow: 2px 2px 12px #fc3, 1px 1px 6px #fc3;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 30px;
+        }
+
+        button {
+            padding: 15px 35px;
+            width: 180px;
+            font-size: 18px;
+            background-color: #fc3;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin:20px;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            background-color: #fc3;
+            color:#000;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            margin: 0;
+            top:27.3%;
+            left:50%;
+            width:180px;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            z-index: 1;
+        }
+
+        .dropdown-option {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .dropdown-option:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<button class="demo-first">Click!</button>
+
+<div class="drop-down-div">
+    <button class="dropdown-button">Select a Subject</button>
+    <ul id="dropdown-options" class="dropdown-options">
+        <li class="dropdown-option">Mathematics</li>
+        <li class="dropdown-option">English</li>
+        <li class="dropdown-option">Physics</li>
+    </ul>
+</div>
+
+
+
+<body>
+    <script>
+        //                          1) 
+        //Click And Log A Message Function
+        ///////////////////////////////////////////////////////////////
+        const buttonFirst = document.querySelector('.demo-first');
+        buttonFirst.addEventListener('click', logMessage);
+        function logMessage() {
+            console.log("Iam Adam Naiem!");
+        }
+        //                          2)
+        //drop down menu when button clicked
+        ///////////////////////////////////////////////////////////////
+        const dropDownBtn = document.querySelector('.dropdown-button');
+        const dropOptions = document.querySelector('.dropdown-options');
+        dropDownBtn.addEventListener('click', dropDownClicked);
+        function dropDownClicked(e) {
+            if(dropOptions.style.display === 'block') {
+                dropOptions.style.display = 'none';
+                return 0;
+                
+            }
+            dropOptions.style.display = 'block';
+        } 
+
+    </script>
+</body>
+
+</html>
